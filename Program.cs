@@ -1,1 +1,1 @@
-﻿new Day2();
+﻿new Day1();

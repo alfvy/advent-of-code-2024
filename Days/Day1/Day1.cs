@@ -11,7 +11,8 @@ public class Day1
         _list1 = new();
         _list2 = new();
         GetInput();
-        ProcessInput();
+        FirstTask();
+        SecondTask();
     }
 
     public void GetInput()
@@ -27,7 +28,7 @@ public class Day1
         }
     }
 
-    public void ProcessInput()
+    public void FirstTask()
     {
         _list1.Sort();
         _list2.Sort();
@@ -37,5 +38,16 @@ public class Day1
             sum += Math.Abs(_list1[i] - _list2[i]);
         }
         System.Console.WriteLine($"The Accumelative Difference between the two lists is {sum}");
+    }
+    
+    public void SecondTask()
+    {
+        Int64 sum = 0;
+        for(int i = 0; i < _list1.Count;i++)
+        {
+            var count = _list2.Count(e => e == _list1[i]);
+            sum += _list1[i] * count;
+        }
+        System.Console.WriteLine($"The Similarity Score Is {sum}");
     }
 }
